@@ -11,11 +11,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest # the machine type
+    runs-on: macos-latest # the machine type
     strategy: # we are using strategy if we need to run on parallel with different devices and version
       matrix:
         api-level: [28] #Google api level for example [25,23,28] 
-        target: [default]
+        target: [google_apis]
         node-version: [12.x]
 
     steps:
