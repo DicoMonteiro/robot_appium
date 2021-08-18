@@ -77,7 +77,10 @@ Acessar a tela de clique simples
     Tela inicial da aplicação
     Acessar menu hamburguer
 
-    Click Text                          BOTÕES
+    # Scroll Down                         xpath=(//android.widget.ImageView[@content-desc="Icon"])[6]
+    # xpath=//android.widget.TextView[contains(@text, 'BOTÕES')]
+    # Click Text                          BOTÕES
+    Click Element At Coordinates        299     1752
     Wait Until Page Contains            CLIQUE SIMPLES
 
     Click Text                          CLIQUE SIMPLES
@@ -93,7 +96,9 @@ Acessar a tela de clique longo
     Tela inicial da aplicação
     Acessar menu hamburguer
 
-    Click Text                          BOTÕES
+    # Scroll Down                         xpath=(//android.widget.ImageView[@content-desc="Icon"])[6]
+    # Click Text                          BOTÕES
+    Click Element At Coordinates        299     1752
     Wait Until Page Contains            CLIQUE LONGO
 
     Click Text                          CLIQUE LONGO
