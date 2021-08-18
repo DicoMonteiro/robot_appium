@@ -15,7 +15,7 @@ jobs:
     strategy: # we are using strategy if we need to run on parallel with different devices and version
       matrix:
         api-level: [28] #Google api level for example [25,23,28] 
-        target: [default, google_apis]
+        target: [default]
         node-version: [12.x]
 
     steps:
