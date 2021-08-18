@@ -15,7 +15,7 @@ jobs:
     strategy: # we are using strategy if we need to run on parallel with different devices and version
       matrix:
         api-level: [28] #Google api level for example [25,23,28] 
-        target: [default]
+        target: [default, google_apis]
         node-version: [12.x]
 
     steps:
@@ -41,14 +41,13 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: EMU
-        uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          arch: x86_64
-          profile: Pixel 2
-          avd-name: Pixel_2_API_28
-          script: pwd
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: ./gradlew connectedCheck
           
       - name: Run Robot Appium Test
         run: robot -d ./logs tests\
