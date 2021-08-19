@@ -1,7 +1,7 @@
 ***Settings***
 Library       AppiumLibrary
 Library       libs/extend.py
-Library       libs/scroll_down.py
+Library       libs/scroll_down_up.py
 
 Resource        helpers.robot
 
